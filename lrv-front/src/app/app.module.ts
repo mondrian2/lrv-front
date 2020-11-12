@@ -12,6 +12,10 @@ import { QuestoesComponent } from './components/questoes/questoes.component';
 import { QuestaoAddComponent } from './components/questoes/questao-add/questao-add.component';
 import { QuestaoDetailComponent } from './components/questoes/questao-detail/questao-detail.component';
 import { QuestaoListComponent } from './components/questoes/questao-list/questao-list.component';
+import { PacoteAddComponent } from './components/pacotes/pacote-add/pacote-add.component';
+import { PacoteListComponent } from './components/pacotes/pacote-list/pacote-list.component';
+import { PacoteDetailComponent } from './components/pacotes/pacote-detail/pacote-detail.component';
+import { PacoteEditComponent } from './components/pacotes/pacote-edit/pacote-edit.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import { QuestaoListComponent } from './components/questoes/questao-list/questao
     QuestoesComponent,
     QuestaoAddComponent,
     QuestaoDetailComponent,
-    QuestaoListComponent
+    QuestaoListComponent,
+    PacoteAddComponent,
+    PacoteListComponent,
+    PacoteDetailComponent,
+    PacoteEditComponent
   ],
   imports: [
     BrowserModule,
