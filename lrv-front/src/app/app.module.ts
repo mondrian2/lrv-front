@@ -8,6 +8,10 @@ import { LivroDetailComponent } from './components/livros/livro-detail/livro-det
 import { LivroListComponent } from './components/livros/livro-list/livro-list.component';
 import { LivroEditComponent } from './components/livros/livro-edit/livro-edit.component';
 import { HttpClientModule } from '@angular/common/http';
+import { QuestoesComponent } from './components/questoes/questoes.component';
+import { QuestaoAddComponent } from './components/questoes/questao-add/questao-add.component';
+import { QuestaoDetailComponent } from './components/questoes/questao-detail/questao-detail.component';
+import { QuestaoListComponent } from './components/questoes/questao-list/questao-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
     LivroAddComponent,
     LivroDetailComponent,
     LivroListComponent,
-    LivroEditComponent
+    LivroEditComponent,
+    QuestoesComponent,
+    QuestaoAddComponent,
+    QuestaoDetailComponent,
+    QuestaoListComponent
   ],
   imports: [
     BrowserModule,
