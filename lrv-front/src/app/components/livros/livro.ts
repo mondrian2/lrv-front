@@ -1,4 +1,4 @@
 export class Livro {
-    livro: string = '';
+    titulo: string = '';
   }
   

@@ -1,3 +1,4 @@
+import { LivroService } from './../../../services/livro.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms'
 import { Livro } from '../livro';
@@ -10,14 +11,20 @@ import { Livro } from '../livro';
 
 export class LivroAddComponent implements OnInit {
 
-  form: FormGroup;
+  form: FormGroup
+  msg: string
 
-  constructor() { }
+  constructor(private srv: LivroService) { }
 
   createForm(livro: Livro){
     this.form = new FormGroup({
-      livro: new FormControl(livro.livro)
+      titulo: new FormControl(livro.titulo)
     })    
+  }
+
+  onSubmit(){
+    this.srv.create(this.form.value)
+    .subscribe(r => this.msg = "Gravado com sucesso")
   }
 
   ngOnInit(): void {

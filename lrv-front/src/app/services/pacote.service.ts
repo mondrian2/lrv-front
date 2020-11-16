@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const baseUrl = 'https://montebiancocursoonline.herokuapp.com/api/livros';
+const baseUrl = 'https://montebiancocursoonline.herokuapp.com/api/pacotes';
 
 @Injectable({
   providedIn: 'root'

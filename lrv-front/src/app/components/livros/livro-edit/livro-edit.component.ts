@@ -14,19 +14,26 @@ export class LivroEditComponent implements OnInit {
   
   form: FormGroup;
   livro: Observable<any>
+  msg: string
+
 
   constructor(private route: ActivatedRoute, private router: Router, private srv: LivroService) { }
 
   createForm(livro: Livro){
     this.form = new FormGroup({
-      livro: new FormControl(livro.livro)
+      titulo: new FormControl(livro.titulo)
     })    
   }
 
   updateForm(data) {
     this.form.patchValue({
-      livro: data[0].titulo
+      titulo: data.titulo
     });
+  }
+
+  onSubmit(){
+    this.srv.update(this.route.snapshot.paramMap.get('id'), this.form.value)
+    .subscribe(r => this.msg = "Atualizado com sucesso")
   }
 
   ngOnInit(): void {
