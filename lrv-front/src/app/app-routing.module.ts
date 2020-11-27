@@ -1,3 +1,4 @@
+import { QuestaoEditComponent } from './components/questoes/questao-edit/questao-edit.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LivroAddComponent } from './components/livros/livro-add/livro-add.component';
@@ -25,7 +26,7 @@ const routes: Routes = [
   {path: 'pacote-list', component: PacoteListComponent},
 
   {path: 'questao-add', component: QuestaoAddComponent},
-  // {path: 'questao-edit/:id', component: QuestaoEditComponent},
+  {path: 'questao-edit/:id', component: QuestaoEditComponent},
   {path: 'questao-show/:id', component: QuestaoDetailComponent},
   {path: 'questao-list', component: QuestaoListComponent}
 ];

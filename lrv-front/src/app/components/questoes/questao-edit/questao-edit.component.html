@@ -1,0 +1,61 @@
+<div class="questao-add">
+    <section class="container">
+        <div class="row" *ngIf="msg">
+            <div class="col-md-8 offset-md-2">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{msg}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <a routerLink="/questao-list">
+                    <span class="material-icons">keyboard_backspace
+                    </span>
+                </a>
+                <h2>Editar um questao</h2>
+
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="tipoinput">Tipo</label>
+                        <select class="custom-select" formControlName="tipo" name="tipo" id="tipoinput">
+                            <option selected>Selecione</option>
+                            <option value="completar">Completar</option>
+                            <option value="alternatica">Alternativa correta</option>
+                            <option value="verbos">Verbos</option>
+                        </select>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="comentarioinput">Comentario</label>
+                        <input type="text" class="form-control" formControlName="comentario" name="comentario" id="comentarioinput"
+                            aria-describedby="quetaolHelp">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="enunciadoinput">Enunciado</label>
+                        <input type="text" class="form-control" formControlName="enunciado" name="enunciado" id="enunciadoinput"
+                            aria-describedby="quetaolHelp">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="pesoinput">Peso</label>
+                        <input type="text" class="form-control" formControlName="peso" name="peso" id="pesoinput"
+                            aria-describedby="quetaolHelp">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="pacote_idinput">pacote_id</label>
+                        <input type="text" class="form-control" formControlName="pacote_id" name="pacote_id" id="pacote_idinput"
+                            aria-describedby="quetaolHelp">
+                    </div>
+    
+                    <button type="submit" class="btn btn-primary">enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

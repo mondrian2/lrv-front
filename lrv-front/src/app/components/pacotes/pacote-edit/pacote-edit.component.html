@@ -1,1 +1,38 @@
-<p>pacote-edit works!</p>
+<section class="container">
+    <div class="row" *ngIf="msg">
+        <div class="col-md-8 offset-md-2">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{msg}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <a routerLink="/pacote-list">
+                <span class="material-icons">keyboard_backspace
+                </span>
+            </a>
+            <h2>Editar um Pacote</h2>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="livro_idinput">livro_id</label>
+                    <select class="custom-select" formControlName="livro_id" name="livro_id" id="livro_idinput">
+                        <option selected>Selecione</option>
+                        <option *ngFor="let l of livros | async" value=" {{l.id}} "> {{l.titulo}} </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pacoteinput">titulo</label>
+                    <input type="text" class="form-control" formControlName="titulo" name="titulo" id="tituloinput"
+                        aria-describedby="titulolHelp">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">enviar</button>
+            </form>
+        </div>
+    </div>
+</section>

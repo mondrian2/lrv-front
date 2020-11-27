@@ -1,8 +1,13 @@
 <section class="container">
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <h1 class="display-4">questao detalhe</h1>
+            <a routerLink="/questao-list">
+                <span class="material-icons">keyboard_backspace
+                </span>
+            </a>
+            <h2 class="display-4">Questão Detalhe</h2>
             <ul class="list-group">
+                <li class="list-group-item" *ngIf="questaodetail">{{questaodetail.enunciado}}</li>
                 <li class="list-group-item" *ngIf="questaodetail">{{questaodetail.tipo}}</li>
             </ul>
         </div>

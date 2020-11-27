@@ -11,7 +11,11 @@
     </div>
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <h1 class="display-4">Pacote add</h1>
+            <a routerLink="/pacote-list">
+                <span class="material-icons">keyboard_backspace
+                </span>
+            </a>
+            <h2>Criar um Pacote</h2>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="livro_idinput">livro_id</label>

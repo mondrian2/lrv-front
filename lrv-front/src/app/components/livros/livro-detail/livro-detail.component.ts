@@ -18,7 +18,10 @@ export class LivroDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.livro = this.srv.get(this.route.snapshot.paramMap.get('id'));
-    this.livro.subscribe(r => this.livrodetail = r)
+    this.livro.subscribe(r => {
+      this.livrodetail = r;
+      console.log(r)
+    })
   }
 
 }

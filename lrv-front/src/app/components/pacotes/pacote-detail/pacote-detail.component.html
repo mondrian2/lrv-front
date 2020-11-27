@@ -1,1 +1,15 @@
-<p>pacote-detail works!</p>
+<section class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <a routerLink="/pacote-list">
+                <span class="material-icons">keyboard_backspace
+                </span>
+            </a>
+            <h2>Visualizar um pacote</h2>
+            <ul class="list-group">
+                <li class="list-group-item" *ngIf="pacotedetail">{{pacotedetail.titulo}}</li>
+                <li class="list-group-item" *ngIf="livro">{{livro.titulo}}</li>
+            </ul>
+        </div>
+    </div>
+</section>

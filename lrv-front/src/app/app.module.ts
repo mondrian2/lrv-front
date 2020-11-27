@@ -16,6 +16,8 @@ import { PacoteAddComponent } from './components/pacotes/pacote-add/pacote-add.c
 import { PacoteListComponent } from './components/pacotes/pacote-list/pacote-list.component';
 import { PacoteDetailComponent } from './components/pacotes/pacote-detail/pacote-detail.component';
 import { PacoteEditComponent } from './components/pacotes/pacote-edit/pacote-edit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { QuestaoEditComponent } from './components/questoes/questao-edit/questao-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +33,16 @@ import { PacoteEditComponent } from './components/pacotes/pacote-edit/pacote-edi
     PacoteAddComponent,
     PacoteListComponent,
     PacoteDetailComponent,
-    PacoteEditComponent
+    PacoteEditComponent,
+    QuestaoEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

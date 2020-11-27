@@ -4,6 +4,7 @@ import { PacoteService } from './../../../services/pacote.service';
 import { Component, OnInit } from '@angular/core';
 import { Pacote } from '../pacote';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pacote-add',
@@ -16,7 +17,7 @@ export class PacoteAddComponent implements OnInit {
   msg: string
   livros: Observable<any>
 
-  constructor(private srv: PacoteService, private srvLivros: LivroService) { }
+  constructor(private srv: PacoteService, private srvLivros: LivroService, private route: Router) { }
 
   createForm(pacote: Pacote){
     this.form = new FormGroup({
@@ -25,9 +26,32 @@ export class PacoteAddComponent implements OnInit {
     })    
   }  
 
+  success(){
+    this.msg = "Gravado com sucesso"
+    this.limpaForm()
+    this.removeMsg()
+  }
+
+  limpaForm(){
+    this.form.patchValue({
+      titulo: '',
+      livro_id: ''
+    });
+  }
+
+  removeMsg(){
+    setTimeout(()=>{
+      this.msg = null;
+    }, 2000);
+  }
+
+  goList() {
+    this.route.navigate(['pacote-list'])
+  }
+
   onSubmit(){
     this.srv.create(this.form.value)
-    .subscribe(r => this.msg = "Gravado com sucesso")
+    .subscribe(r => this.success())
   }
 
   ngOnInit(): void {
